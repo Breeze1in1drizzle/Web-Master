@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <title>首页-学子商城</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        /* 本身有的模块div不需要"." */
+        /* div         
+        {
+            border: 1px solid #aaa;
+        } */
+        .carousel .item img
+        {
+            width: 100%;
+        }
+        .xz-page-header
+        {
+            font-size: 1.2em;
+            border-bottom: 1px solid #d9d9d9;
+            padding: 15px 0 5px;
+        }
+        .xz-item
+        {
+            background: #e8e8e8;
+            padding: 20px 26px;
+        }
+        .xz-item-1-img
+        {
+            position: relative;
+            right: 10px;
+            width: 100%;
+            transition: all .5s;    /*0.5s*/    /*对所有变化的属性执行0.5s的动画*/
+        }
+        .xz-item-1-img:hover, .xz-item-2-img:hover     /* hover:  */
+        {
+            transform: scale(1.1);  /*鼠标悬停的时候执行变形：缩放为1.1倍大小*/
+        } 
+        .xz-item-2-img
+        {
+            position: relative;
+            right: 10px;
+            top: 0px;
+            width: 120%;
+            transition: all .5s;
+        }
+        .xz-item-row-1
+        {
+            height: 290px;   
+        }
+        @media screen and (max-width: 768px)
+        {
+            .xz-item-1-img      /*针对手机屏幕调整图片的位置和尺寸*/
+            {
+                right: 0px;
+                width: 100%;
+                /* height: 50%; */
+                top: 0px;
+            }
+            .xz-item-2-img      /*针对手机屏幕调整图片的位置和尺寸*/
+            {
+                right: 0px;
+                width: 10%;
+                height: 10%;
+                top: 0px;
+            }
+            .xz-item-row-1
+            {
+                height: 430px;   
+            }
+        }
+        @media screen  and (min-width: 768px)
+        {
+            .xz-item-3-title
+            {
+                font-size: 1.4em;
+                margin-top: 60px;
+                margin-bottom: 40px;
+            }     
+        }
+        
+    </style>
+
+  </head>
+
+
+  <body>
+
+    <!-- 页头 -->
+    <div class="navbar navbar-default">
+        <div class="container">
+
+            <!-- 导航条的头部 -->
+            <div class="navbar-header">
+                <!-- 头部logo -->
+                <a href="/index.html"><img src="img/logo.png"></a>
+                <!-- 头部：汉堡包按钮 -->
+                <button type="button" class="navbar-toggle" data-toggle="collaspse" data-target="#xzMenu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- 导航条的头部 -->
+
+            <!-- 搜索框 -->
+            <!-- <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <img id="search" width="20px" height="20px" src="img/search.png" alt="">
+                        </button>
+                    </span>
+                </div>
+            </div> -->
+            <!-- 搜索框 -->
+
+            <!-- 导航条的折叠部分 -->
+            <div class="navbar-collapse">
+                <!-- 折叠部分：左侧的菜单 -->
+                <!-- ul>li*3>a -->
+                <ul class="nav navbar-nav">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">学习用品</a></li>
+                    <li><a href="#">私人定制</a></li>
+                </ul>
+
+                <!-- 右侧链接和文字 -->
+                <a class="navbar-text navbar-link navbar-right" href="/login.html">登录</a>
+                <span class="navbar-text navbar-right">|</span>
+                
+                <a class="navbar-text navbar-link navbar-right" href="/login.html">注册</a>
+                <span class="navbar-text navbar-right">|</span>
+                <a class="navbar-text navbar-link navbar-right" href="/cart.html">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                </a>
+
+                <span class="navbar-text navbar-right">|</span>
+                <a class="navbar-text navbar-link navbar-right" href="/favorite.html">
+                    <span class="glyphicon glyphicon-heart"></span>
+                </a>
+                <!-- 右侧链接和文字 -->
+
+
+                <!-- 搜索表单 -->
+                <form action="#" class="navbar-form navbar-right">
+                    <div class="input-group">
+                        <input type="text" placeholder="商品搜索" class="form-control">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn bg-primary">
+                                <span class="glyphicon glyphicon-search">
+
+                                </span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                
+
+            </div>
+            <!-- 导航条的折叠部分 -->
+
+
+            <div class="navbar-collapse"></div>
+        </div>
+    </div>
+
+
+
+    <!-- 轮播广告 -->
+    <div class="container">
+        <div class="carousel slide" data-ride="carousel" id="xzCarousel">
+            <!-- 轮播广告内容 -->
+            <div class="carousel-inner">
+                <!-- <div class="item active">
+                    <img src="img/index/banner1.png">
+                </div>
+                <div class="item">
+                    <img src="img/index/banner2.png">
+                </div>
+                <div class="item">
+                    <img src="img/index/banner3.png">
+                </div>
+                <div class="item">
+                    <img src="img/index/banner4.png">
+                </div> -->
+
+                <!-- 此处应填充为动态数据 -->
+
+            </div><!-- 此处应填充为动态数据 -->
+            <!-- 轮播广告内容 -->
+
+            <!-- 翻页控制器 -->
+            <a class="left carousel-control" href="#xzCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#xzCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+            <!-- 翻页控制器 -->
+        
+            <!-- 广告分页器 -->
+            <!-- 广告分页器 -->
+        </div>
+    </div>
+    <!-- 轮播广告内容 -->
+
+
+    <!-- 一楼 -->
+    <div id="f1" class="container">
+
+        <!-- 首页推荐 /1F -->
+        <!-- <div class="xz-page-header">
+            <img src="img/computer_icon.png" alt="">
+            首页推荐 /1F
+        </div> -->
+        <!-- 首页推荐 /1F -->
+
+        <!-- row -->
+        
+        <!-- row2 -->
+
+    </div>
+    <!-- 一楼 -->
+    
+    
+
+
+    <!-- 二楼 -->
+    <div if="f2" class="container">
+
+        <!-- 首页推荐 /2F -->
+        <div class="xz-page-header">
+            <img src="img/computer_icon.png" alt="">
+            首页推荐 /2F
+        </div>
+        <!-- 首页推荐 /2F -->
+
+        <!-- row -->
+        <div class="row">
+            <!-- 商品1 -->
+            <div class="col-xs-6 col-md-7">
+                <div class="xz-item xz-item-row-1">
+                    <div class="row">
+                        <div class="col-md-6 col-md-push-6">
+                            <img class="xz-item-1-img img-responsive" src="img/study_computer_img1.png" alt="">
+                        </div>
+                        <div class="col-md-6 col-md-pull-6">
+                            <h2>Apple MacBook Air</h2>
+                            <p>酷睿双核i5处理器|256B SSD|8GB内存|英特尔HD显卡620    Lorem ipsum dolor sit amet consectetur adipisicingelit. Odit, laborum eaque eius quaerat esse nemo recusandae? Odit aliquam vel veritatis minima possimusin deserunt atque aliquid quae, voluptate at tempore?</p>
+                            <h4 class="text-info">￥6899.00</h4>
+                            <button class="btn btn-info" type="button">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 商品1 -->
+    
+            <!-- 商品2 -->
+            <div class="col-xs-6 col-md-5">
+                <div class="xz-item xz-item-row-1">
+                    <div class="row">
+                        <div class="col-md-4 col-md-push-8">
+                            <img class="xz-item-2-img img-responsive" src="img/study_computer_img2.png" alt="">
+                        </div>
+                        <div class="col-md-8 col-md-pull-4">
+                            <h2>小米Air 金属超轻薄</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nihil modi fugit nam soluta possimus ipsam asperiores sed? Quasi sed quam harum dolores asperiores suscipit optio similique officia ad dicta.</p>
+                            <h4 class="text-info">￥6899</h4>
+                            <button class="btn btn-info" type="button">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 商品2 -->
+
+        <div class="row">
+            <!-- 商品3 -->
+            <div class="col-xs-6 col-md-6">
+                <div class="xz-item">
+                    <div class="row">
+                        <div class="col-md-6 col-md-push-6">
+                            <img class="xz-item-2-img img-responsive" src="img/study_computer_img3.png" alt="">
+                        </div>
+                        <div class="col-md-6 col-md-pull-6">
+                            <h3>联想E480C 轻薄</h3>
+                            <p class="text-info">￥6899</p>
+                            <button class="btn btn-info" type="button">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 商品4 -->
+            <div class="col-xs-6 col-md-2">
+                <div class="xz-item">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <img src="img/study_computer_img5.png" alt="">
+                        </div>
+                        <div class="col-xs-12">
+                            <p class="text-center">联想E480C 轻薄</p>
+                            <h4 class="text-info text-center">￥6899</h4>
+                            <button class="btn btn-info" type="button">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 商品5 -->
+            <div class="col-xs-6 col-md-2">
+                <div class="xz-item">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <img src="img/study_computer_img5.png" alt="">
+                        </div>
+                        <div class="col-xs-12">
+                            <p class="text-center">联想E480C 轻薄</p>
+                            <h4 class="text-info text-center">￥6899</h4>
+                            <button class="btn btn-info" type="button">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 商品6 -->
+            <div class="col-xs-6 col-md-2">
+                <div class="xz-item">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <img src="img/study_computer_img5.png" alt="">
+                        </div>
+                        <div class="col-xs-12">
+                            <p class="text-center">联想E480C 轻薄</p>
+                            <h4 class="text-info text-center">￥6899</h4>
+                            <button class="btn btn-info" type="button">查看详情</button>        
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    
+    </div>
+    <!-- row -->
+
+    </div>
+    <!-- 二楼 -->
+
+
+
+    <!-- 三楼 -->
+    <div class="container">
+
+        <!-- 首页推荐 /3F -->
+        <div class="xz-page-header">
+            <img src="img/computer_icon.png" alt="">
+            首页推荐 /3F
+        </div>
+        <!-- 首页推荐 /3F -->
+
+        <!-- row -->
+        <div class="row">
+            <!-- 商品1 -->
+            <div class="col-xs-6 col-md-7">
+                <div class="xz-item xz-item-row-1">
+                    <div class="row">
+                        <div class="col-md-6 col-md-push-6">
+                            <img class="xz-item-1-img img-responsive" src="img/index/study_computer_img1.png" alt="">
+                        </div>
+                        <div class="col-md-6 col-md-pull-6">
+                            <h2>Apple MacBook Air</h2>
+                            <p>酷睿双核i5处理器|256B SSD|8GB内存|英特尔HD显卡620    Lorem ipsum dolor sit amet consectetur adipisicingelit. Odit, laborum eaque eius quaerat esse nemo recusandae? Odit aliquam vel veritatis minima possimusin deserunt atque aliquid quae, voluptate at tempore?</p>
+                            <h4 class="text-info">￥6899.00</h4>
+                            <button class="btn btn-info" type="button">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 商品1 -->
+        
+            <!-- 商品2 -->
+            <div class="col-xs-6 col-md-5">
+                <div class="xz-item xz-item-row-1">
+                    <div class="row">
+                        <div class="col-md-4 col-md-push-8">
+                            <img class="xz-item-2-img img-responsive" src="img/index/study_computer_img2.png" alt="">
+                        </div>
+                        <div class="col-md-8 col-md-pull-4">
+                            <h2>小米Air 金属超轻薄</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nihil modi fugit nam soluta possimus ipsam asperiores sed? Quasi sed quam harum dolores asperiores suscipit optio similique officia ad dicta.</p>
+                            <h4 class="text-info">￥6899</h4>
+                            <button class="btn btn-info" type="button">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 商品2 -->
+
+            <div class="row">
+                <!-- 商品3 -->
+                <div class="col-xs-6 col-md-6">
+                    <div class="xz-item">
+                        <div class="row">
+                            <div class="col-md-6 col-md-push-6">
+                                <img class="xz-item-2-img img-responsive" src="img/index/study_computer_img3.png" alt="">
+                            </div>
+                            <div class="col-md-6 col-md-pull-6">
+                                <h3>联想E480C 轻薄</h3>
+                                <p class="text-info">￥6899</p>
+                                <button class="btn btn-info" type="button">查看详情</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 商品4 -->
+                <div class="col-xs-6 col-md-2">
+                    <div class="xz-item">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <img src="img/index/study_computer_img5.png" alt="">
+                            </div>
+                            <div class="col-xs-12">
+                                <p class="text-center">联想E480C 轻薄</p>
+                                <h4 class="text-info text-center">￥6899</h4>
+                                <button class="btn btn-info" type="button">查看详情</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 商品5 -->
+                <div class="col-xs-6 col-md-2">
+                    <div class="xz-item">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <img src="img/index/study_computer_img5.png" alt="">
+                            </div>
+                            <div class="col-xs-12">
+                                <p class="text-center">联想E480C 轻薄</p>
+                                <h4 class="text-info text-center">￥6899</h4>
+                                <button class="btn btn-info" type="button">查看详情</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 商品6 -->
+                <div class="col-xs-6 col-md-2">
+                    <div class="xz-item">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <img src="img/index/study_computer_img5.png" alt="">
+                            </div>
+                            <div class="col-xs-12">
+                                <p class="text-center">联想E480C 轻薄</p>
+                                <h4 class="text-info text-center">￥6899</h4>
+                                <button class="btn btn-info" type="button">查看详情</button>        
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
+
+    </div>
+    <!-- 三楼 -->
+
+    
+    <!--图标条-->
+    <div class="xz-iconbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <img class="center-block" src="img/icon1.png" alt="">
+                    <div class="text-center">品质保障</div>
+                </div>    <!--从小号的行列div开始考虑，避免删除元素-->
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <img class="center-block" src="img/icon2.png" alt="">
+                    <div class="text-center">私人定制</div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <img class="center-block" src="img/icon3.png" alt="">
+                    <div class="text-center">学员特供</div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <img class="center-block" src="img/icon3.png" alt="">
+                    <div class="text-center">专属特权</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--图标条-->
+
+    <!-- 页尾 -->
+    <div class="xz-footer">
+        <div class="container">
+            <div class="row">
+
+                <!-- 达内科技标签   左侧 -->
+                <div class="col-xs-4 col-md-4">
+                    <img src="img/logo.png" alt="">
+                    <img src="img/footerFont.png" alt="">
+                </div>
+                <!-- 达内科技标签   左侧 -->
+
+                <!-- 中间 -->
+                <div class="col-xs-4 col-md-4">     <!--列内不可放列，但列内可放行； container是最大的容器-->
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <h4>买家帮助</h4>
+                            <!-- ul>li*3>a -->
+                            <ul>
+                                <li><a href="#">新手指南</a></li>
+                                <li><a href="#">服务保障</a></li>
+                                <li><a href="#">常见问题</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>买家帮助</h4>
+                            <ul>
+                                <li><a href="#">新手指南</a></li>
+                                <li><a href="#">服务保障</a></li>
+                                <li><a href="#">常见问题</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>买家帮助</h4>
+                            <ul>
+                                <li><a href="#">新手指南</a></li>
+                                <li><a href="#">服务保障</a></li>
+                                <li><a href="#">常见问题</a></li>
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+                <!-- 中间 -->
+
+                <!-- 右边 -->
+                <div class="col-xs-4 col-md-4">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="text-center">
+                                <div class="center-block">学子商城客户端</div>
+                                <img class="center-block" src="img/ios.png" alt="">
+                                <img class="center-block" src="img/android.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="text-center">
+                                    <img class="center-block" src="img/erweima.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 右边 -->
+
+            </div> 
+
+            <!-- 尾部版权注释 -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="text-center">©2017 达内科技有限公司 版权所有 京ICP备08000853号-75</div>
+                </div>
+            </div>
+            <!-- 尾部版权注释 -->
+
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    
+    <script>
+    // 页面加载完成，异步请求服务器端动态数据
+    $(window).load(function(){
+        $.ajax({
+            method: 'GET',
+            url: 'http://127.0.0.1:5050/index',
+            success: function(data){
+                console.log('成功获取到服务器端异步返回的数据')
+                // 1.处理轮播广告的动态数据
+                let html = ''   // 即将要放到轮播广告内的动态内容
+                for(let i in data.carouselItems){
+                    // let isActive = i==0?"active":''
+                    html += `
+                        <div class="item ${i==0?'active':''}">
+                            <img src="${data.carouselItems[i].img}">
+                        </div>
+                    `
+                }
+                // console.log(html)
+                $('.carousel .carousel-inner').html(html)
+
+                // 2.处理一楼的动态数据
+                let data1 = data.recommendedItems   // 一楼的动态数据
+                let htmlF1 = $('#f1').html()//html:给参数就赋值，不给就读取内容        // 一楼原有内容——即header
+                
+                // htmlF1   ``
+                    htmlF1 += `
+                    <div class="row">
+            <!-- 商品1 -->
+            <div class="col-xs-6 col-md-7">
+                <div class="xz-item xz-item-row-1">
+                    <div class="row">
+                        <div class="col-md-6 col-md-push-6">
+                            <img class="xz-item-1-img img-responsive" src="${data1[0].pic}" alt="">
+                        </div>
+                        <div class="col-md-6 col-md-pull-6">
+                            <h2>${data1[0].title}</h2>
+                            <p>${data1[0].details}</p>
+                            <h4 class="text-info">￥${data1[0].price}</h4>
+                            <button class="btn btn-info" type="button">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 商品1 -->
+        
+            <!-- 商品2 -->
+            <div class="col-xs-6 col-md-5">
+                <div class="xz-item xz-item-row-1">
+                    <div class="row">
+                        <div class="col-md-4 col-md-push-8">
+                            <img class="xz-item-2-img img-responsive" src="${data1[1].pic}" alt="">
+                        </div>
+                        <div class="col-md-8 col-md-pull-4">
+                            <h2>${data1[1].title}</h2>
+                            <p>${data1[1].details}</p>
+                            <h4 class="text-info">￥${data1[1].price}</h4>
+                            <button class="btn btn-info" type="button">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 商品2 -->
+
+            <div class="row">
+                <!-- 商品3 -->
+                <div class="col-xs-6 col-md-6">
+                    <div class="xz-item">
+                        <div class="row">
+                            <div class="col-md-6 col-md-push-6">
+                                <img class="xz-item-2-img img-responsive" src="${data1[2].pic}" alt="">
+                            </div>
+                            <div class="col-md-6 col-md-pull-6">
+                                <h3>${data1[2].title}</h3>
+                                <p class="text-info">￥${data1[2].price}</p>
+                                <button class="btn btn-info" type="button">查看详情</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 商品4 -->
+                <div class="col-xs-6 col-md-2">
+                    <div class="xz-item">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <img src="${data1[3].pic}" alt="">
+                            </div>
+                            <div class="col-xs-12">
+                                <p class="text-center">${data1[3].title}</p>
+                                <h4 class="text-info text-center">￥${data1[3].price}</h4>
+                                <button class="btn btn-info" type="button">查看详情</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 商品5 -->
+                <div class="col-xs-6 col-md-2">
+                    <div class="xz-item">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <img src="${data1[4].pic}" alt="">
+                            </div>
+                            <div class="col-xs-12">
+                                <p class="text-center">${data1[4].title}</p>
+                                <h4 class="text-info text-center">￥${data1[4].price}</h4>
+                                <button class="btn btn-info" type="button">查看详情</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 商品6 -->
+                <div class="col-xs-6 col-md-2">
+                    <div class="xz-item">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <img src="${data1[5].pic}" alt="">
+                            </div>
+                            <div class="col-xs-12">
+                                <p class="text-center">${data1[5].title}</p>
+                                <h4 class="text-info text-center">￥${data1[5].price}</h4>
+                                <button class="btn btn-info" type="button">查看详情</button>        
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        
+        </div> 
+                    `//``
+                    // htmlF1
+                    $('#f1').html(htmlF1)   // 吧修改后的内容赋值回一楼
+
+                // 3.处理二楼的动态数据
+                
+                // 4.处理三楼的动态数据
+
+            }
+            
+
+        })
+    })
+    </script>
+    
+    <script src="js/bootstrap.js"></script>
+  </body>
+
+</html>

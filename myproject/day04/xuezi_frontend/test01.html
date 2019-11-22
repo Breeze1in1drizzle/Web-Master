@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--这几段代码是为响应式网页准备的-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"><!--X-UA-Compatible为IE浏览器准备的，保证让IE更新后仍能够浏览老版本IE的网页-->
+    <title>Document</title>
+    <style>
+    .nav
+    {
+        background: #dfd;
+        height: 200px;
+        width: 20%;
+        float:left;
+    }
+    .main
+    {
+        background: #fdd;
+        height: 500px;
+        width: 60%;
+        float:left;
+    }
+    .ad
+    {
+        background: #ddf;
+        height: 300px;
+        width: 20%;
+        float:left;
+    }
+    /*为屏幕平板屏幕准备的样式*/
+    @media all and (min-width: 768px) and (max-width: 991px) {
+        .nav
+        {
+            width: 20%;
+        }
+        .main
+        {
+            width: 80%;
+        }
+        .ad
+        {
+            display: none;
+        }
+    }
+
+    /*为手机屏幕准备的样式*/
+    /*满足767px条件才使用该样式*/
+    @media all and (max-width: 767px) {
+        .nav, .main, .ad
+        {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="nav">导航区域</div>
+    <div class="main">主题区域</div>
+    <div class="ad">广告区域</div>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <title>学子注册页面</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        div         /* 本身有的模块div不需要"." */
+        {
+            border: 1px solid #aaa;
+        }
+        .xz-main
+        {
+            background-image: url(./img/bg.png);
+        }
+        .xz-register
+        {
+            background: rgba(0, 0, 0, .5);
+            color: #fff;
+        }
+        
+    </style>
+
+  </head>
+
+
+  <body>
+    <!--页头-->
+    <div class="xz-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xs-3">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="col-xs-9">
+                    <h2>欢迎注册</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--页头-->
+
+
+    <!--主体-->
+    <div class="xz-main">
+        <div class="container">
+            <!-- 列内的行 -->
+            <div class="row">
+
+                <div class="col-xs-12 col-md-7 col-md-offset-5">
+                    <div class="xz-register">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-6">注册用户</div>
+                                    <div class="col-xs-6">直接登录</div>
+                                </div>
+                                
+                                <!-- 表单     垂直-->
+                                <form action="#" class="form-horizontal">
+                                    <!-- 表单组 -->
+                                    <div class="form-group">
+                                        <!-- 表单标签 -->
+                                        <label for="uname" class="col-md-2 control-label">用户名：</label>
+                                        <div class="col-md-6">
+                                            <input id="uname"  type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span id="unameMsg" class="help-block">用户名长度在3~12之间</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- 表单标签 -->
+                                        <label for="upwd" class="col-md-2 control-label">登录密码：</label>
+                                        <div class="col-md-6">
+                                            <input id="upwd" type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="help-block">密码长度在3~12之间</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- 表单标签 -->
+                                        <label for="repwd" class="col-md-2 control-label">确认密码：</label>
+                                        <div class="col-md-6">
+                                            <input id="repwd" type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="help-block">密码长度在3~12之间</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- 表单标签 -->
+                                        <label for="email" class="col-md-2 control-label">邮箱：</label>
+                                        <div class="col-md-6">
+                                            <input id="email" type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="help-block">邮箱账号长度在3~12之间</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- 表单标签 -->
+                                        <label for="phone" class="col-md-2 control-label">电话号码：</label>
+                                        <div class="col-md-6">
+                                            <input id="phone" type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="help-block">电话号长度</span>
+                                        </div>
+                                    </div>
+                                    <!-- 表单组 -->
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-md-offset-2">
+                                            <button id="btRegister" type="button" class="btn btn-info btn-block">提交注册信息</button>
+                                        </div>
+                                    </div>
+                        
+                                </form>
+                                <!--表单     垂直 -->
+                                 <div class="col-xs-3">
+                                
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- 列内的行 -->
+        </div>
+    </div>
+    <!--主体-->
+
+    <!--图标条-->
+    <div class="xz-iconbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <img class="center-block" src="img/icon1.png" alt="">
+                    <div class="text-center">品质保障</div>
+                </div>    <!--从小号的行列div开始考虑，避免删除元素-->
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <img class="center-block" src="img/icon2.png" alt="">
+                    <div class="text-center">私人定制</div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <img class="center-block" src="img/icon3.png" alt="">
+                    <div class="text-center">学员特供</div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <img class="center-block" src="img/icon3.png" alt="">
+                    <div class="text-center">专属特权</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--图标条-->
+
+    <!-- 页尾 -->
+    <div class="xz-footer">
+        <div class="container">
+            <div class="row">
+
+                <!-- 达内科技标签   左侧 -->
+                <div class="col-xs-4 col-md-4">
+                    <img src="img/logo.png" alt="">
+                    <img src="img/footerFont.png" alt="">
+                </div>
+                <!-- 达内科技标签   左侧 -->
+
+                <!-- 中间 -->
+                <div class="col-xs-4 col-md-4">     <!--列内不可放列，但列内可放行； container是最大的容器-->
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <h4>买家帮助</h4>
+                            <!-- ul>li*3>a -->
+                            <ul>
+                                <li><a href="#">新手指南</a></li>
+                                <li><a href="#">服务保障</a></li>
+                                <li><a href="#">常见问题</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>买家帮助</h4>
+                            <ul>
+                                <li><a href="#">新手指南</a></li>
+                                <li><a href="#">服务保障</a></li>
+                                <li><a href="#">常见问题</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>买家帮助</h4>
+                            <ul>
+                                <li><a href="#">新手指南</a></li>
+                                <li><a href="#">服务保障</a></li>
+                                <li><a href="#">常见问题</a></li>
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+                <!-- 中间 -->
+
+                <!-- 右边 -->
+                <div class="col-xs-4 col-md-4">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="text-center">
+                                <div class="center-block">学子商城客户端</div>
+                                <img class="center-block" src="img/ios.png" alt="">
+                                <img class="center-block" src="img/android.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="text-center">
+                                    <img class="center-block" src="img/erweima.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 右边 -->
+
+            </div> 
+
+            <!-- 尾部版权注释 -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="text-center">©2017 达内科技有限公司 版权所有 京ICP备08000853号-75</div>
+                </div>
+            </div>
+            <!-- 尾部版权注释 -->
+
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <script>
+        $('#uname').blur(function(){    // 焦点检验，
+            let uname = $(this).val()
+            if(uname.length<3){
+                $('#unameMsg').html('用户名太短').remove('alert-info').addClass('alert-danger')
+            }
+        })
+
+        // 如果输入的用户名格式合法，则继续进行服务器端验证
+    /*    $.ajax({
+            method: 'GET',
+            url: 'http://127.0.0.1:5050/user/check/uname?uname'+xxx,
+            success: function(data){ data.code===201提示“用户名已被占用” }
+        })
+        */
+
+/**为btRegister按钮添加事件监听*/
+        $('#btRegister').click(function(){
+            // alert("btRegister")
+            // 读取所有的表单输入
+            let uname = $('#uname').val()
+            let upwd = $('#upwd').val()
+            let repwd = $('#repwd').val()
+            let email = $('#email').val()
+            let phone = $('#phone').val()
+            
+            // alert(uname, upwd, repwd, email, phone)
+            console.log(uname, upwd, repwd, email, phone)
+
+            // 验证表单输入的合法性
+            if(uname.length<3){
+                $('#unameMsg').html('用户名长度太短').remove('alert-info').addClass('alert-danger')
+            }else if(uname.length>12){
+                $('#unameMsg').html('用户名长度太长').remove('alert-info').addClass('alert-danger')
+            }else{
+                $('#unameMsg').html('用户名长度合法').remove('alert-danger').addClass('alert-info')
+            }
+
+            // 异步提交用户的输入给后台API
+            $.ajax({
+                method: 'POST',
+                url: 'http://xzbreezeli.applinzi.com',//'http://127.0.0.1:5050/user/register',
+                data: `uname=${uname}&upwd=${upwd}&email=${email}&phone=${phone}`,
+                success: function(data, msg, xhr){
+                    console.log('异步请求注册API成功：', data)
+                    // console.log(data)
+                    // console.log(msg)
+                    // console.log(xhr)
+                    if(data.code==200){
+                        // alert('注册成功')
+                        $('#modalRegisterSucc').modal()
+                    }else{
+                        // alert('注册失败！服务器返回错误消息：', data.msg)
+                        $('#serverErrMsg').html(data.msg)
+                        $('#modalRegisterErr').modal()
+                    }
+                },
+                error: function(xhr, err){      // 跨域请求错误
+                    console.log('异步请求注册API失败：')
+                    console.log(xhr)
+                    console.log(err)
+                }
+            })
+
+        })
+    </script>
+
+    <!-- 弹出式对话框：表示注册成功 -->
+
+    <!--半透明遮罩-->
+    <div id="modalRegisterSucc" class="modal fade">
+        <!--对话框尺寸、位置-->
+        <div class="modal-dialog modal-sm">
+            <!-- 边框、倒角、背景色 -->
+            <div class="modal-content">
+
+                <!-- 头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">注册成功</h4>
+                </div>
+                <!-- 头部 -->
+
+                <!-- 主体 -->
+                <div class="modal-body">
+                    <p>新用户注册成功</p>
+                </div>
+                <!-- 主体 -->
+
+                <!-- 尾部 -->
+                <div class="modal-footer">
+                    <button class="btn btn-info" type="button" data-dismiss="modal">
+                        确定
+                    </button>
+                </div>
+                <!-- $('[data-dismiss="modal"]').click(function()){} -->
+                <!-- 尾部 -->
+
+            </div>
+            <!-- 边框、倒角、背景色 -->
+        </div>
+        <!--对话框尺寸、位置-->
+    </div>
+    <!--半透明遮罩-->
+
+    <!-- 弹出式对话框：表示注册失败 -->
+
+    <!--半透明遮罩-->
+    <div id="modalRegisterErr" class="modal fade">
+        <!-- 对话框尺寸、位置 -->
+        <div class="modal-dialog modal-sm">
+
+             <!-- 边框、倒角、背景色 -->
+             <div class="modal-content">
+
+                <!-- 头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">注册失败</h4>
+                </div>
+                <!-- 头部 -->
+
+                <!-- 主体 -->
+                 <div class="modal-body">
+                     <p><b>新用户注册失败:</b></p>
+                     <p>服务器返回的错误消息：<span id="serverErrMsg"></span></p>
+                </div>
+                <!-- <div id="modalRegisterFail" class=""></div> -->
+                <!-- 主体 -->
+    
+                <!-- 尾部 -->
+                <div class="modal-footer">
+                    <button class="btn btn-info" type="button" data-dismiss="modal">
+                         确定
+                    </button> <!--data-dismiss点击后框消失-->
+                </div>
+                <!-- 尾部 -->
+    
+            </div>
+            <!-- 边框、倒角、背景色 -->
+        </div>
+        <!-- 对话框尺寸、位置 -->
+    </div>
+    <!--半透明遮罩-->
+
+
+
+    <div class="alert-info">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium id aperiam soluta dignissimos, eaque illo exercitationem quidem, corrupti odit tempora expedita eius rerum perspiciatis maiores eos necessitatibus modi architecto? Numquam.
+    </div>
+
+  </body>
+
+</html>
